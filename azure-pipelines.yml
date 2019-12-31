@@ -10,13 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Visual Studio Enterprise(2)(b52c23ca-f0ed-4c59-9a40-f788a44c3b2d)'
-    appType: 'webAppLinux'
-    appName: 'samplewebapp'
-    package: '$(System.DefaultWorkingDirectory)/**/*.war'
-    runtimeStack: 'TOMCAT|9.0-jre8'
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
