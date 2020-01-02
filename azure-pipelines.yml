@@ -31,5 +31,13 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/gameoflife-web/target/gameoflife.war'
+    PathtoPublish: '- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Visual Studio Enterprise(3)(b52c23ca-f0ed-4c59-9a40-f788a44c3b2d)'
+    appType: 'webAppLinux'
+    appName: 'samplewebapp'
+    package: '$(Build.ArtifactStagingDirectory)/gameoflife-web/target/gameoflife.war'
+    runtimeStack: 'TOMCAT|8.5-jre8''
     ArtifactName: 'gol'
+
+
